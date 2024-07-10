@@ -12,7 +12,7 @@ from airflow.operators.python import PythonOperator
 
 dag = DAG(
     dag_id="Dag_02",
-    description="LOADING_DATA_FROM_GCS_TO_BIGQUERY",
+    description="LOADING_DATA_FROM_GCS_TO_BIGQUERY ",
     schedule_interval=None,
     start_date=datetime(2021, 1, 1),
     catchup=False,
