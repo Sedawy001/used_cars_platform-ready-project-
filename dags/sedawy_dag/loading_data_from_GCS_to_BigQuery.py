@@ -21,7 +21,7 @@ dag = DAG(
 
 start_task = EmptyOperator(task_id="start_task", dag=dag)
 load_task = GoogleCloudStorageToBigQueryOperator(
-        task_id='load_to_bigquery',
+        task_id='FROM_GCS_TO_BIGQUERY',
         bucket='cars-com_dataset.csv',
         source_objects=['data*.csv'],
         destination_project_dataset_table='ready-data-de24.Cars_02',
