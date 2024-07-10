@@ -20,7 +20,6 @@ dag = DAG(
 
 
 start_task = EmptyOperator(task_id="start_task", dag=dag)
-
 end_task = EmptyOperator(task_id="end_task", dag=dag)
 
 start_task  >> end_task
