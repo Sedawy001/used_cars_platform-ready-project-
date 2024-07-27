@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: landing_02
+    database: ready-data-de24
+    schema: landing_02
+    tables:
+      - name: Cars
+
+  - name: dbt_msedawy_Stg_02
+    database: ready-data-de24
+    schema: dbt_msedawy_Stg_02
+    tables:
+      - name: brand

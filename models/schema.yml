@@ -1,0 +1,101 @@
+version: 2
+
+models:
+  - name: brand
+    description: "A table containing unique car brands."
+    columns:
+      - name: brand_id
+        description: "Unique identifier for each brand."
+        tests:
+          - not_null
+          - unique
+      - name: brand
+        description: "Name of the brand."
+        tests:
+          - not_null
+          - unique
+
+  - name: model
+    description: "A table containing unique car models and their years."
+    columns:
+      - name: model_id
+        description: "Unique identifier for each model."
+        tests:
+          - not_null
+          - unique
+      - name: model
+        description: "Name of the model."
+        tests:
+          - not_null
+      - name: year
+        description: "Year of the model."
+        tests:
+          - not_null
+  
+  
+  - name: cars
+    description: "A model containing used cars with essential features and a unique car_id."
+    columns:
+      - name: car_id
+        description: "Unique identifier for each car."
+        tests:
+          - not_null
+          - unique
+      - name: price
+        description: "Price of the car."
+        tests:
+          - not_null
+      - name: damage
+        description: "Indicates if the car has damage (boolean)."
+      - name: first_own
+        description: "Indicates if the car is the first owner (boolean)."
+      - name: personal_usage
+        description: "Indicates if the car was used personally (boolean)."
+      - name: interior_color
+        description: "Color of the car's interior."
+      - name: exterior_color
+        description: "Color of the car's exterior."
+
+
+  - name: features_model
+    description: "A model containing various car features with a unique car_id."
+    columns:
+      - name: car_id
+        description: "Unique identifier for each car."
+        tests:
+          - not_null
+          - unique
+      - name: alloy_wheels
+        description: "Indicates if the car has alloy wheels (boolean)."
+      - name: adaptive_cruise_control
+        description: "Indicates if the car has adaptive cruise control (boolean)."
+      - name: navigation_system
+        description: "Indicates if the car has a navigation system (boolean)."
+      - name: power_liftgate
+        description: "Indicates if the car has a power liftgate (boolean)."
+      - name: backup_camera
+        description: "Indicates if the car has a backup camera (boolean)."
+      - name: keyless_start
+        description: "Indicates if the car has keyless start (boolean)."
+      - name: remote_start
+        description: "Indicates if the car has remote start (boolean)."
+      - name: sunroof_or_moonroof
+        description: "Indicates if the car has a sunroof or moonroof (boolean)."
+      - name: automatic_emergency_braking
+        description: "Indicates if the car has automatic emergency braking (boolean)."
+      - name: stability_control
+        description: "Indicates if the car has stability control (boolean)."
+      - name: leather_seats
+        description: "Indicates if the car has leather seats (boolean)."
+      - name: memory_seat
+        description: "Indicates if the car has memory seats (boolean)."
+      - name: third_row_seating
+        description: "Indicates if the car has third-row seating (boolean)."
+      - name: apple_car_play_or_android_auto
+        description: "Indicates if the car has Apple CarPlay or Android Auto (boolean)."
+      - name: bluetooth
+        description: "Indicates if the car has Bluetooth connectivity (boolean)."
+      - name: usb_port
+        description: "Indicates if the car has USB ports (boolean)."
+      - name: heated_seats
+        description: "Indicates if the car has heated seats (boolean)."      
