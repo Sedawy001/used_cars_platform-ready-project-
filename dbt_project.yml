@@ -41,3 +41,9 @@ models:
     Stg_02:
       +schema: 'Stg_02'
       +materialized: table
+    DMs:
+      +schema: 'DMs'
+      +materialized: table  
+    views:
+      +schema: 'views'
+      +materialized: view    

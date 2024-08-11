@@ -1,10 +1,13 @@
 with dt as (
-    select
-        distinct drivetrain as drivetrain_types
+    select distinct
+        CASE 
+            WHEN drivetrain IS NULL THEN 'Unknown'
+            ELSE drivetrain
+        END as drivetrain_types
+
     from
         {{ source('landing_02', 'Cars') }}
-    where
-        drivetrain is not null
+    
         
 )
 
