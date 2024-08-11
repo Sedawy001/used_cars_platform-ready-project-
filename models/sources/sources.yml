@@ -6,9 +6,23 @@ sources:
     schema: landing_02
     tables:
       - name: Cars
-
   - name: dbt_msedawy_Stg_02
     database: ready-data-de24
     schema: dbt_msedawy_Stg_02
     tables:
       - name: brand
+      - name: fuel
+      - name: engine
+      - name: transmission
+      - name: drivetrain
+      - name: model   
+      - name: car
+      - name: car_features
+  - name: dbt_msedawy_DMs
+    database: ready-data-de24
+    schema: dbt_msedawy_DMs
+    tables:
+      - name: dim_engine
+      - name: dim_model
+      - name: junk_dim
+      - name: fact_car
