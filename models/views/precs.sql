@@ -1,11 +1,15 @@
-with perc as (
-  select row_number()over(partition by fuel_type) as rn
-  , fuel_type , c.price
-  from {{ source('dbt_msedawy_DMs', 'dim_engine') }} e
-  join {{ source('dbt_msedawy_DMs', 'fact_car') }} c
-  on e.engine_id = c.engine_id
+WITH perc AS (
+  SELECT row_number() OVER (PARTITION BY e.fuel_type) AS rn,
+         e.fuel_type,
+         c.price
+  FROM {{ source('dbt_msedawy_DMs', 'dim_engine') }} e
+  JOIN {{ source('dbt_msedawy_DMs', 'fact_car') }} c
+    ON e.engine_id = c.engine_id
 )
-select fuel_type , concat(round((count(rn)/4768) * 100) , '%')
-from perc
-where fuel_type = 'Gasoline' or fuel_type Like 'Electric' or fuel_type = 'Hybrid'
-group by fuel_type
+SELECT fuel_type, 
+       CONCAT(ROUND((COUNT(rn)/4768) * 100), '%') AS percentage
+FROM perc
+WHERE fuel_type = 'Gasoline' 
+   OR fuel_type LIKE 'Electric' 
+   OR fuel_type = 'Hybrid'
+GROUP BY fuel_type
