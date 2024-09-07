@@ -4,3 +4,4 @@ inner join {{ source('dbt_msedawy_DMs', 'fact_car') }} f
 on m.model_id = f.model_id
 group by m.brand
 order by cnt desc
+limit 5

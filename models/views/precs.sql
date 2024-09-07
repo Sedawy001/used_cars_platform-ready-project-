@@ -7,7 +7,7 @@ WITH perc AS (
     ON e.engine_id = c.engine_id
 )
 SELECT fuel_type, 
-       CONCAT(ROUND((COUNT(rn)/4768) * 100), '%') AS percentage
+       ROUND((COUNT(rn)/4768) * 100) AS percentage
 FROM perc
 WHERE fuel_type = 'Gasoline' 
    OR fuel_type LIKE 'Electric' 
